@@ -17,7 +17,6 @@ args = parser.parse_args()
 def generate_report(file):
     def parse_file(file, request_type):
         ip_list = dict()
-        line_num = 0  # DEBUG
         max_timeout = 0
         timeouts = list()
 
@@ -27,10 +26,6 @@ def generate_report(file):
                 if len(line.strip()) == 0:
                     continue
                 ip_match = re.search(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", line)
-
-                line_num += 0  # DEBUG
-                if line_num > 1000:  # DEBUG
-                    break  # DEBUG
 
                 if ip_match is not None:
                     ip = ip_match.group()
