@@ -4,9 +4,7 @@ import json
 import os
 
 """ 
-Парсер логов
-    TODO:
-        топ 3 самых долгих запросов (сохранять ссылку, метод, ip, время запроса)        
+Парсер логов    
 """
 
 parser = argparse.ArgumentParser(description='Обработка логов.')
