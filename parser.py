@@ -41,6 +41,7 @@ def generate_report(file):
                         except Exception as Err:
                             print('Ошибка поиска ссылки в строке:', line)
                             print('Найдено:', link)
+                            link = 'link not found'
                     else:
                         print('Отсутствует ссылка в строке:', line)
                     # Get 3 longest requests
@@ -49,6 +50,7 @@ def generate_report(file):
                         timeout = int(re.search(r'\" (\d{3,5})$', line).groups()[0])
                     except Exception as Err:
                         print('Ошибка поиска таймаута:', line)
+                        timeout = 0
                     if timeout > max_timeout:
                         if len(timeouts) >= 3:
                             timeouts.pop(2)
